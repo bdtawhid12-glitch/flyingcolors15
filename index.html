@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Discover handmade art, crafts, gifts and custom creations from Flying Colors. Made with love, created to make someone smile.">
+<title>Flying Colors — Dream • Create • Inspire</title>
+<style>
+:root{--pink:#f6c7d8;--rose:#d95883;--deep:#542039;--cream:#fffaf7;--lilac:#ead8fa;--mint:#d9eee6;--text:#34212a;--muted:#78616b;--line:#f0dce4}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--text);font-family:Georgia,"Times New Roman",serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
+.announcement{background:linear-gradient(90deg,#f7c2d4,#ffe4ec,#f7c2d4);text-align:center;padding:9px 12px;font-size:14px;color:#65243c}
+header{position:sticky;top:0;z-index:10;background:#fffaf7ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--deep)}.butterfly{font-size:39px}.brand-name{font-family:"Brush Script MT","Segoe Script",cursive;font-size:clamp(27px,4vw,42px);line-height:1}.tagline{font-size:12px;letter-spacing:.5px;text-align:center;margin-top:5px}
+.links{display:flex;align-items:center;gap:24px;font-size:15px}.links a:hover{color:var(--rose)}.nav-cta,.btn{background:var(--rose);color:white;border:0;border-radius:999px;padding:12px 20px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}.nav-cta:hover,.btn:hover{transform:translateY(-2px);background:#c94773}
+.menu{display:none;border:0;background:transparent;font-size:25px}
+.hero{max-width:1200px;margin:22px auto 0;padding:0 22px}.hero-card{min-height:370px;border-radius:22px;overflow:hidden;position:relative;display:grid;grid-template-columns:1.05fr 1fr;background:linear-gradient(115deg,#f9d6df,#fff0e8 48%,#e9dafa);box-shadow:0 10px 35px #a84c6a12}
+.hero-art{display:flex;align-items:center;justify-content:center;min-height:330px;background:radial-gradient(ellipse at 30% 25%,#fff8d9 0,transparent 34%),linear-gradient(140deg,#f6b8ca,#f9e4d9 52%,#d9c7f3);position:relative}
+.canvas{width:48%;aspect-ratio:4/5;background:linear-gradient(#243d70,#b96f9b 55%,#f8c58f);border:9px solid #fff9ed;box-shadow:0 14px 28px #57304b33;transform:rotate(-5deg);position:relative;display:flex;align-items:end;justify-content:center;overflow:hidden}
+.canvas:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 20%,#fff4bd 0 4%,transparent 4.5%),linear-gradient(transparent 65%,#172e46 65%);clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.canvas:after{content:"✦  ·  ✧  ·  ✦";position:absolute;top:18%;left:12%;color:#fff0cf;letter-spacing:9px;font-size:13px}
+.canvas-trees{position:relative;z-index:1;color:#152b45;font-size:clamp(25px,4vw,52px);letter-spacing:-12px;margin-bottom:5px}
+.sparkle{position:absolute;font-size:36px;color:white;text-shadow:0 2px 15px #fff}.sparkle.one{top:15%;left:14%}.sparkle.two{right:15%;bottom:17%}.hero-copy{padding:45px 42px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;color:#a13d65;font-weight:bold}.hero h1{font-family:"Brush Script MT","Segoe Script",cursive;font-weight:500;font-size:clamp(46px,6vw,76px);line-height:1;margin:12px 0;color:var(--deep)}.hero p{font-size:18px;line-height:1.7;max-width:440px;margin:4px 0 22px}.hero-note{font-style:italic;color:#81536b;margin-top:13px;font-size:14px}
+.section{max-width:1200px;margin:44px auto;padding:0 22px}.section-head{text-align:center;margin-bottom:24px}.section-head h2{font-family:"Brush Script MT","Segoe Script",cursive;font-size:38px;font-weight:500;color:var(--deep);margin:0 0 8px}.section-head p{color:var(--muted);margin:0}
+.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}.category{border:1px solid var(--line);border-radius:18px;background:white;padding:18px 10px;text-align:center;box-shadow:0 5px 18px #7a38500a}.category .icon{margin:0 auto 10px;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;font-size:28px;background:var(--pink)}.category:nth-child(2) .icon{background:var(--lilac)}.category:nth-child(3) .icon{background:var(--mint)}.category:nth-child(4) .icon{background:#ffe3c8}.category:nth-child(5) .icon{background:#f7e5d7}.category:nth-child(6) .icon{background:#dce8ff}.category:hover{transform:translateY(-3px);transition:.2s}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.product{background:#fff;border:1px solid var(--line);border-radius:17px;overflow:hidden;box-shadow:0 5px 18px #7a38500a}.product-art{aspect-ratio:1/1;display:grid;place-items:center;font-size:78px;background:linear-gradient(145deg,#fce4e9,#f4e9ff);position:relative;overflow:hidden}.product-art img{width:100%;height:100%;object-fit:cover;display:block}.product-placeholder{grid-column:1/-1;background:#fff;border:1px dashed #dca6bb;border-radius:16px;padding:28px;text-align:center;color:var(--muted);line-height:1.7}.product-placeholder a{color:var(--rose);font-weight:bold}.product:nth-child(2) .product-art{background:linear-gradient(145deg,#f8e8ce,#fce4f1)}.product:nth-child(3) .product-art{background:linear-gradient(145deg,#e4d7c8,#f5e7d8)}.product:nth-child(4) .product-art{background:linear-gradient(145deg,#fff0d6,#f7d8e6)}.product:nth-child(5) .product-art{background:linear-gradient(145deg,#dce9ff,#f7e4ef)}.product:nth-child(6) .product-art{background:linear-gradient(145deg,#d9eee6,#fff0d6)}.heart{position:absolute;right:12px;top:10px;border:0;background:#ffffffd9;border-radius:50%;width:34px;height:34px;font-size:19px}.product-info{padding:15px}.product h3{font-size:17px;margin:0 0 8px}.price{font-weight:bold;color:#8b2d53;margin-bottom:12px}.add{width:100%;border:0;border-radius:10px;background:#fde6ee;color:#6b2842;padding:10px}.add:hover{background:#f7cfdd}
+.split{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch}.insta-panel,.why-panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 5px 18px #7a38500a}.panel-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}.panel-title h2{margin:0;font-size:24px;color:var(--deep)}.panel-title a{color:var(--rose);font-size:14px}.insta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.insta-tile{aspect-ratio:1/1;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:42px;background:linear-gradient(135deg,#f8dce8,#e8dcfa);overflow:hidden}.insta-tile img{width:100%;height:100%;object-fit:cover;display:block}.feed-controls{display:flex;justify-content:center;margin-top:14px}.feed-controls button{border:1px solid var(--line);border-radius:999px;background:#fff0f5;color:var(--deep);padding:10px 18px}.feed-status{font-size:13px;color:var(--muted);line-height:1.5}.insta-tile:nth-child(2){background:linear-gradient(135deg,#f8e9d5,#f8dce8)}.insta-tile:nth-child(3){background:linear-gradient(135deg,#dcefe6,#fff0d6)}.insta-caption{font-size:12px;color:var(--muted);margin:13px 0 0}.why-panel{background:linear-gradient(135deg,#ffe7ef,#fff7f1)}.why-panel h2{font-family:"Brush Script MT","Segoe Script",cursive;font-size:32px;font-weight:500;margin:0 0 15px;color:var(--deep)}.why-list{list-style:none;margin:0;padding:0;display:grid;gap:15px}.why-list li{display:flex;gap:11px;align-items:flex-start;line-height:1.5}.why-list span{color:var(--rose);font-size:20px}
+.custom{border-radius:22px;background:linear-gradient(100deg,#f7cbd9,#f5e3fa,#fff0df);padding:32px;text-align:center}.custom h2{font-family:"Brush Script MT","Segoe Script",cursive;font-size:38px;font-weight:500;color:var(--deep);margin:0 0 8px}.custom p{max-width:620px;margin:0 auto 18px;line-height:1.7}
+footer{background:#542039;color:#fff3f7;padding:35px 22px;margin-top:50px}.footer-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:22px;align-items:center;flex-wrap:wrap}.footer-brand{font-family:"Brush Script MT","Segoe Script",cursive;font-size:34px}.footer-small{font-size:13px;opacity:.85;margin-top:5px}.footer-links{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}.cart-pill{position:fixed;right:20px;bottom:20px;z-index:20;background:var(--deep);color:white;border:0;border-radius:999px;padding:13px 18px;box-shadow:0 6px 22px #39162c44;display:none}
+.notice{display:none;margin:0 0 14px;padding:12px;border-radius:12px;background:#fff0c9;color:#704b00;font-size:13px}
+@media(max-width:850px){.links{display:none;position:absolute;left:0;right:0;top:100%;background:#fffaf7;padding:18px 24px;flex-direction:column;border-bottom:1px solid var(--line)}.links.open{display:flex}.menu{display:block}.nav-cta{display:none}.hero-card{grid-template-columns:1fr}.hero-art{min-height:250px}.hero-copy{padding:28px 26px;text-align:center;align-items:center}.categories{grid-template-columns:repeat(3,1fr)}.products{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}.section{margin:32px auto}}
+@media(max-width:460px){.brand-name{font-size:27px}.butterfly{font-size:30px}.tagline{font-size:10px}.nav{padding:13px 15px}.hero{padding:0 13px}.section{padding:0 13px}.categories{gap:8px}.category{padding:12px 5px;font-size:13px}.category .icon{width:52px;height:52px;font-size:24px}.products{gap:10px}.product-info{padding:11px}.product h3{font-size:15px}.product-art{font-size:60px}.section-head h2{font-size:32px}.insta-panel,.why-panel{padding:15px}.custom{padding:25px 17px}}
+</style>
+</head>
+<body>
+<div class="announcement">✨ Handmade with love — little things made to bring big smiles 💗</div>
+<header>
+  <nav class="nav">
+    <a class="brand" href="#home" aria-label="Flying Colors home"><span class="butterfly">🦋</span><span><span class="brand-name">Flying Colors</span><span class="tagline" style="display:block">Dream • Create • Inspire ♡</span></span></a>
+    <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
+    <div class="links" id="navLinks"><a href="#home">Home</a><a href="#shop">Shop</a><a href="#instagram">Instagram</a><a href="#about">Our Story</a><a href="#contact">Contact</a></div>
+    <a class="nav-cta" href="#instagram">◎ Follow on Instagram</a>
+  </nav>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-card">
+    <div class="hero-art" aria-label="Decorative sunset painting illustration"><span class="sparkle one">✧</span><div class="canvas"><div class="canvas-trees">♠ ♠ ♠</div></div><span class="sparkle two">✦</span></div>
+    <div class="hero-copy"><div class="eyebrow">A little world of handmade magic</div><h1>Flying Colors</h1><p>Art, crafts & thoughtful gifts — lovingly made to celebrate your colorful little moments.</p><a class="btn" href="#shop">Explore the collection <span>→</span></a><div class="hero-note">Made by hand. Given from the heart. ♡</div></div>
+  </div>
+</section>
+
+<section class="section" aria-label="Shop by category">
+  <div class="categories">
+    <a class="category" href="#shop"><div class="icon">🎨</div>Paintings</a>
+    <a class="category" href="#shop"><div class="icon">🧶</div>Crochet</a>
+    <a class="category" href="#shop"><div class="icon">📿</div>Bangles</a>
+    <a class="category" href="#shop"><div class="icon">💍</div>Rings</a>
+    <a class="category" href="#shop"><div class="icon">💌</div>Beautiful Cards</a>
+    <a class="category" href="#contact"><div class="icon">💌</div>Custom Orders</a>
+  </div>
+</section>
+
+<section class="section" id="shop">
+  <div class="section-head"><h2>Fresh from Flying Colors ♡</h2><p>Browse real photos from Instagram. Message us to ask about a piece and its price.</p></div>
+  <div class="notice" id="cartNotice" role="status"></div>
+  <div class="products" id="productGrid" aria-live="polite">
+    <div class="product-placeholder">Your real craft photos will appear here after the Instagram feed is connected. <a href="https://www.instagram.com/flyingcolors15/" target="_blank" rel="noopener">Browse Flying Colors on Instagram →</a></div>
+  </div>
+</section>
+
+<section class="section split" id="instagram">
+  <div class="insta-panel">
+    <div class="panel-title"><h2>📸 Latest from Instagram</h2><a id="instagramLink" href="https://www.instagram.com/flyingcolors15/" target="_blank" rel="noopener">View profile →</a></div>
+    <div class="insta-grid" id="instaGrid" aria-live="polite"></div>
+    <p class="insta-caption feed-status" id="instaCaption">Connecting to Flying Colors’s authorized Instagram feed…</p>
+    <div class="feed-controls"><button id="loadMoreInstagram" type="button" hidden>Load older photos</button></div>
+    <p style="text-align:center;margin:18px 0 0"><a class="btn" id="followButton" href="https://www.instagram.com/flyingcolors15/" target="_blank" rel="noopener">◎ Follow Flying Colors</a></p>
+  </div>
+  <aside class="why-panel" id="about">
+    <h2>Why shop with Flying Colors?</h2>
+    <ul class="why-list"><li><span>♥</span> Handmade with care and love</li><li><span>♥</span> Unique designs, made to feel special</li><li><span>♥</span> New creations shared on Instagram</li><li><span>♥</span> Every order supports a creative small business</li><li><span>♥</span> Custom ideas are always welcome</li></ul>
+  </aside>
+</section>
+
+<section class="section" id="contact">
+  <div class="custom"><h2>Have a dream in mind? ✨</h2><p>Tell us what you’re imagining! From thoughtful gifts to custom colors and personal keepsakes, let’s make something meaningful together.</p><a class="btn" id="contactButton" href="mailto:hello@flyingcolor.example?subject=Flying%20Color%20custom%20order">Ask about a custom order →</a></div>
+</section>
+</main>
+<footer><div class="footer-inner"><div><div class="footer-brand">Flying Colors 🦋</div><div class="footer-small">Dream • Create • Inspire — handmade with love.</div></div><div class="footer-links"><a href="#shop">Shop</a><a href="#instagram">Instagram</a><a href="#contact">Custom orders</a></div><div class="footer-small">© <span id="year"></span> Flying Colors. Made with love.</div></div></footer>
+
+<script>
+const INSTAGRAM_USERNAME = "flyingcolors15";
+const INSTAGRAM_PROFILE_URL = "https://www.instagram.com/flyingcolors15/";
+const INSTAGRAM_DM_URL = "https://ig.me/m/flyingcolors15";
+const FEED_ENDPOINT = "/api/instagram";
+const PAGE_SIZE = 12;
+let apiItems = [];
+let nextCursor = null;
+let loadedIndex = 0;
+let isLoading = false;
+let hasMore = false;
+
+const productGrid = document.getElementById('productGrid');
+const instaGrid = document.getElementById('instaGrid');
+const instaCaption = document.getElementById('instaCaption');
+const loadMoreButton = document.getElementById('loadMoreInstagram');
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('instagramLink').href = INSTAGRAM_PROFILE_URL;
+document.getElementById('followButton').href = INSTAGRAM_PROFILE_URL;
+document.getElementById('contactButton').href = INSTAGRAM_DM_URL;
+document.getElementById('contactButton').target = '_blank';
+document.getElementById('contactButton').rel = 'noopener';
+document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+
+function mediaUrl(item){
+  if(item.media_type === 'CAROUSEL_ALBUM' && item.children && item.children.data && item.children.data.length){
+    const child = item.children.data.find(c=>c.media_url || c.thumbnail_url);
+    if(child) return child.media_type === 'VIDEO' ? (child.thumbnail_url || child.media_url) : (child.media_url || child.thumbnail_url);
+  }
+  if(item.media_type === 'VIDEO') return item.thumbnail_url || item.media_url || '';
+  return item.media_url || item.thumbnail_url || '';
+}
+function flattenMedia(posts){
+  const out=[];
+  for(const post of (posts || [])){
+    if(post.media_type === 'CAROUSEL_ALBUM' && post.children && post.children.data && post.children.data.length){
+      for(const child of post.children.data){
+        const src=child.media_type === 'VIDEO' ? (child.thumbnail_url || child.media_url) : (child.media_url || child.thumbnail_url);
+        if(src) out.push({...post, id: `${post.id}-${child.id || out.length}`, media_type: child.media_type || 'IMAGE', media_url: src, thumbnail_url: child.thumbnail_url || ''});
+      }
+    } else if(mediaUrl(post)) out.push({...post, media_url: mediaUrl(post)});
+  }
+  return out;
+}
+function excerpt(text, max=92){
+  const clean=(text || '').replace(/\s+/g,' ').trim();
+  if(!clean) return 'See the Instagram post for details.';
+  return clean.length>max ? clean.slice(0,max-1)+'…' : clean;
+}
+function makePhoto(item, className){
+  const a=document.createElement('a');
+  a.className=className;
+  a.href=item.permalink || INSTAGRAM_PROFILE_URL;
+  a.target='_blank'; a.rel='noopener';
+  a.setAttribute('aria-label','View Flying Colors post on Instagram');
+  const img=document.createElement('img');
+  img.src=item.media_url; img.alt=excerpt(item.caption,120); img.loading='lazy';
+  a.appendChild(img);
+  return a;
+}
+function renderFeatured(items){
+  productGrid.replaceChildren();
+  const featured=items.slice(0,6);
+  if(!featured.length){
+    const empty=document.createElement('div'); empty.className='product-placeholder';
+    empty.textContent='No photos were returned by Instagram yet. Visit the profile to browse current work.';
+    const link=document.createElement('a'); link.href=INSTAGRAM_PROFILE_URL; link.target='_blank'; link.rel='noopener'; link.textContent=' Browse Flying Colors on Instagram →';
+    empty.appendChild(link); productGrid.appendChild(empty); return;
+  }
+  featured.forEach(item=>{
+    const card=document.createElement('article'); card.className='product';
+    const photo=makePhoto(item,'product-art');
+    card.appendChild(photo);
+    const info=document.createElement('div'); info.className='product-info';
+    const title=document.createElement('h3'); title.textContent=excerpt(item.caption,48); info.appendChild(title);
+    const detail=document.createElement('div'); detail.className='price'; detail.textContent='Ask for price & availability'; info.appendChild(detail);
+    const button=document.createElement('button'); button.className='add'; button.type='button'; button.textContent='♡ Ask about this piece';
+    button.addEventListener('click',()=>window.open(INSTAGRAM_DM_URL,'_blank','noopener'));
+    info.appendChild(button); card.appendChild(info); productGrid.appendChild(card);
+  });
+}
+function appendGallery(items){
+  for(const item of items) instaGrid.appendChild(makePhoto(item,'insta-tile'));
+}
+async function fetchPage(cursor=null){
+  const url=new URL(FEED_ENDPOINT,window.location.origin);
+  url.searchParams.set('limit','25');
+  if(cursor) url.searchParams.set('after',cursor);
+  const response=await fetch(url.toString(),{headers:{'Accept':'application/json'}});
+  const body=await response.json().catch(()=>({}));
+  if(!response.ok) throw new Error(body.message || 'Instagram feed is not connected yet.');
+  return body;
+}
+async function loadInitialFeed(){
+  try{
+    const page=await fetchPage();
+    const items=flattenMedia(page.data || []);
+    apiItems=items; nextCursor=page.nextCursor || null; hasMore=Boolean(page.hasMore); loadedIndex=0;
+    renderFeatured(items);
+    appendGallery(items.slice(0,PAGE_SIZE)); loadedIndex=Math.min(PAGE_SIZE,items.length);
+    instaCaption.textContent=items.length ? `Showing real photos from @${INSTAGRAM_USERNAME}. Tap any photo to open its original Instagram post.` : 'No photos were returned. Open the Instagram profile to view the latest posts.';
+    loadMoreButton.hidden=!(loadedIndex<apiItems.length || hasMore);
+    if(!items.length) renderFeatured([]);
+  }catch(error){
+    instaCaption.textContent='The live feed is not connected yet. The site is ready, but an authorized Meta connection and secure server settings are required. You can still browse the Instagram profile directly.';
+    const empty=document.createElement('div'); empty.className='product-placeholder';
+    empty.textContent='Live craft photos will appear here after the secure Instagram connection is configured. ';
+    const link=document.createElement('a'); link.href=INSTAGRAM_PROFILE_URL; link.target='_blank'; link.rel='noopener'; link.textContent='View Flying Colors on Instagram →'; empty.appendChild(link);
+    productGrid.replaceChildren(empty);
+    loadMoreButton.hidden=true;
+  }
+}
+async function loadMore(){
+  if(isLoading) return;
+  isLoading=true; loadMoreButton.disabled=true; loadMoreButton.textContent='Loading…';
+  try{
+    if(loadedIndex>=apiItems.length && hasMore && nextCursor){
+      const page=await fetchPage(nextCursor);
+      apiItems=flattenMedia(page.data || []); loadedIndex=0;
+      nextCursor=page.nextCursor || null; hasMore=Boolean(page.hasMore);
+    }
+    const batch=apiItems.slice(loadedIndex,loadedIndex+PAGE_SIZE);
+    appendGallery(batch); loadedIndex+=batch.length;
+    loadMoreButton.hidden=!(loadedIndex<apiItems.length || hasMore);
+    if(!batch.length && !hasMore) instaCaption.textContent='You have reached the end of the available Instagram posts.';
+  }catch(error){ instaCaption.textContent='Could not load older photos. Please try again later.'; }
+  finally{isLoading=false;loadMoreButton.disabled=false;loadMoreButton.textContent='Load older photos';}
+}
+loadMoreButton.addEventListener('click',loadMore);
+loadInitialFeed();
+</script>
+</body>
+</html>
